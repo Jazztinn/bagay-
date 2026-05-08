@@ -19,6 +19,51 @@ img{
     max-height: fit-content;
 }
 
+.map-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.map-image{
+    width: auto;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.hitbox-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Let clicks pass through empty areas */
+}
+
+.hitbox{
+    fill: rgba(255, 0, 0, 0);
+    stroke: rgba(255, 0, 0, 0);
+    stroke-width: 1;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+    pointer-events: all; /* Catch clicks specifically on polygons */
+    cursor: pointer;
+}
+
+.hitbox:hover{
+    fill: rgba(255, 0, 0, 0.2);
+    stroke: rgba(255, 0, 0, 0.8);
+    stroke-width: 2;
+}
+
+.hitbox.active{
+    fill: rgba(255, 0, 0, 0.3);
+    stroke: rgba(255, 0, 0, 1);
+    stroke-width: 2;
+}
+
 .first-person, .second-person{
     width: 100%;
     height: 800px;
